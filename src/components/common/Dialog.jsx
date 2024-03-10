@@ -5,11 +5,11 @@ import Overlay from '@/components/common/Overlay'
 import Button from '@/components/common/Button'
 
 const dropIn = {
-    hidden: {
+    initial: {
         y: "-100vh",
         opacity: 0
     },
-    visible: {
+    animate: {
         y: 0,
         opacity: 1,
         transition: {
@@ -41,8 +41,8 @@ const Dialog = (props) => {
             className="dialog-overlay"
             onClick={(e) => e.stopPropagation()}
             variants={dropIn}
-            initial="hidden"
-            animate="visible"
+            initial="initial"
+            animate="animate"
             exit="exit">
                 <div className="dialog-container">
                     <div className="title">{props.params.title}</div>

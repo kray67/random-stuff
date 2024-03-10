@@ -28,14 +28,14 @@ const Header = () => {
                             <BackIcon />
                         </Link>
             }
-            <AnimatePresence initial={false} mode="wait">
+            <AnimatePresence mode="wait">
                 <motion.div
                 key={displayName}
                 className="header-title"
-                initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				exit={{ opacity: 0 }}
-				transition={{ duration: 0.5 }}>
+                initial={{ y: -100, opacity: 0 }}
+				animate={{ y: 0, opacity: 1 }}
+				exit={{ y: -100, opacity: 0.2 }}
+				transition={{ duration: 0.3 }}>
                     {displayName}
                 </motion.div>
             </AnimatePresence>

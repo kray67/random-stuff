@@ -1,8 +1,35 @@
 import { router } from '@/routes/router.jsx'
 import { Link } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import '@/styles/views/Home.scss'
 import Button from '@/components/common/Button'
+
+const staggerControl = {
+	initial: {
+		transition: {
+			staggerChildren: 0.2
+		}
+	},
+	animate: {
+		transition: {
+			staggerChildren: 0.2
+		}
+	}
+}
+
+const linkAnimation = {
+	initial: {
+		x: -200,
+		opacity: 0
+	},
+	animate: {
+		x: 0,
+		opacity: 1,
+		transition: {
+			duration: 0.5
+		}
+	}
+}
 
 const Home = () => {
 
@@ -13,9 +40,7 @@ const Home = () => {
     const displayRoutes = homeRoutes.map((route, index) =>
 		<motion.div
 		key={index}
-		initial={{ translateX: '-100vh', opacity: 0 }}
-		animate={{ translateX: 0, opacity: 1 }}
-		transition={{ duration: 1 * ((index + 1) / 2.5) }}>
+		variants={linkAnimation}>
 			<Link className="home-link nostyle" key={index} to={route.path}>
 				<Button text={route.linkText} comingSoon={!route.isAvailable}/>
 			</Link>
@@ -23,14 +48,20 @@ const Home = () => {
 	)
 
 	return (
-		<div
-		id="Home"
-		key="home"
-		className="view-wrapper">
-			<AnimatePresence>
+		<AnimatePresence>
+			<motion.div
+			id="Home"
+			key="home"
+			className="view-wrapper"
+			variants={staggerControl}
+			initial="initial"
+			animate="animate">
+				{/* <AnimatePresence>
+					{ displayRoutes }
+				</AnimatePresence> */}
 				{ displayRoutes }
-			</AnimatePresence>
-		</div>
+			</motion.div>
+		</AnimatePresence>
 	)
 }
 

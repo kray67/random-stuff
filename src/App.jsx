@@ -20,9 +20,9 @@ const App = () => {
 			<Header />
 			<AnimatePresence initial={false} mode="wait">
 				<motion.div key={location.pathname} className="content"
-				initial={{ translateX: "-100%", opacity: 0 }}
-				animate={{ translateX: 0, opacity: 1 }}
-				exit={{ translateX: "-100%", opacity: 0 }}
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
 				transition={{ duration: 0.5 }}>
 					<AnimatedOutlet />
 				</motion.div>
