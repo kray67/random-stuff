@@ -1,0 +1,52 @@
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px 80px;
+    font-size: 32px;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid var(--clr-light);
+    color: var(--clr-light);
+    z-index: 1000;
+
+    transition: all 0.25s;
+
+    .title {
+        width: 100%;
+        border-bottom: 2px solid var(--clr-light);
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        font-size: 50px;
+        
+        .btn {
+            min-width: 100px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .dialog-container {
+        gap: 20px;
+        padding: 20px;
+        font-size: 24px;
+
+        .title {
+            width: 80%;
+            font-size: 30px;
+        }
+
+        .buttons {
+            gap: 20px;
+        }
+    }
+}

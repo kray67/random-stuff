@@ -1,0 +1,29 @@
+#ErrorPage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    .error-code {
+        position: absolute;
+        inset: 0;
+        top: -100px;
+        font-size: 800px;
+        color: var(--clr-disabled)
+    }
+
+    .error-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 1;
+        font-size: 30px;
+
+        .oops {
+            color: var(--clr-negative);
+        }
+    }
+}

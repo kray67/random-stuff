@@ -1,0 +1,98 @@
+#Flip {
+	.game-over-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+
+		.message {
+			text-align: center;
+			font-size: 80px;
+
+			&.win {
+				color: var(--clr-positive);
+			}
+
+			&.lost {
+				color: var(--clr-negative);
+			}
+		}
+
+		.results-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 50px;
+
+			.result-group {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 12px;
+
+				span {
+					display: block;
+					font-size: 20px;
+
+					&.result {
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+    #Flip {
+		.game-over-wrapper {
+			gap: 30px;
+
+			.message {
+				font-size: 40px;
+			}
+
+			.results-wrapper {
+				gap: 40px;
+
+				.result-group {
+					span {
+						display: block;
+						font-size: 16px;
+
+						&.result {
+							font-size: 32px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(0);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0);
+}
+.fade-enter-active,
+.fade-exit-active {
+  transition: opacity 500ms, transform 500ms;
+}

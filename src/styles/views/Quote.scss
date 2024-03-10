@@ -1,0 +1,76 @@
+#Quote {
+    .main-wrapper {
+        --padding: 24px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        padding: var(--padding);
+
+        div:has(.dropdown-wrapper) {
+            position: absolute;
+            top: var(--padding);
+            z-index: 2;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            z-index: 1;
+
+            .quote-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+
+                .quote {
+                    width: 100%;
+                    font-size: 30px;
+                }
+
+                .author {
+                    width: 100%;
+                    text-align: right;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .btn {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    #Quote {
+        .main-wrapper {
+            .content-wrapper {
+                .quote-wrapper {
+                    gap: 15px;
+
+                    .quote {
+                        font-size: 20px;
+                    }
+
+                    .author {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .btn {
+                font-size: 20px;
+            }
+        }
+    }
+}
