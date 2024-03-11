@@ -10,8 +10,8 @@ const Wordle = () => {
         className="view-wrapper">
 
             <div className="under-development">
-                <AnimatedWordWrapper textStyle="title" word="WORDLE" animationDelay={ 1000 } />
-                <AnimatedWordWrapper textStyle="message" word="COMING SOON" animationDelay={ 1500 } />
+                <AnimatedWordWrapper textStyle="title" word="WORDLE" animationDelay={ 500 } />
+                <AnimatedWordWrapper textStyle="message" word="COMING SOON" animationDelay={ 750 } />
             </div>
 
         </div>
