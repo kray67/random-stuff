@@ -1,6 +1,6 @@
-import { useLocation, useOutlet } from "react-router-dom"
-import { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { useLocation, useOutlet } from 'react-router-dom'
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import '@/styles/App.scss'
 import Header from '@/components/common/Header.jsx'
 

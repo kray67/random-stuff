@@ -1,6 +1,6 @@
-import { Link, useLocation } from "react-router-dom"
-import { useState, useEffect } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { Link, useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { router } from '@/routes/router.jsx'
 import '@/styles/components/common/Header.scss'
 import BackIcon from '@/assets/icons/back.svg?react'

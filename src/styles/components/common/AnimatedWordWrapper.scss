@@ -1,0 +1,27 @@
+.animated-word-wrapper {
+    position: relative;
+    overflow: hidden;
+    font-size: 50px;
+
+    .word-absolute-top {
+        position: absolute;
+        top: 0;
+    }
+
+    .animated-word {
+        position: relative;
+        white-space: nowrap;
+        display: flex;
+
+        .animated-letter {}
+    }
+
+    &.title {
+        font-size: 60px;
+    }
+
+    &.message {
+        font-size: 40px;
+        color: var(--clr-warning);
+    }
+}

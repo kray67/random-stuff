@@ -1,4 +1,5 @@
 import '@/styles/views/Wordle.scss'
+import AnimatedWordWrapper from '@/components/common/animatedWord/AnimatedWordWrapper'
 
 const Wordle = () => {
 
@@ -9,8 +10,8 @@ const Wordle = () => {
         className="view-wrapper">
 
             <div className="under-development">
-                <div className="title">WORDLE</div>
-                <div className="message">COMING SOON</div>
+                <AnimatedWordWrapper textStyle="title" word="WORDLE" animationDelay={ 1000 } />
+                <AnimatedWordWrapper textStyle="message" word="COMING SOON" animationDelay={ 1500 } />
             </div>
 
         </div>
