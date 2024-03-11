@@ -6,14 +6,6 @@ import Header from '@/components/common/Header.jsx'
 
 const App = () => {
 
-	const appHeight = () => {
-		const appElem = document.getElementById('App')
-		appElem.style.setProperty('--vh', (window.innerHeight*.01) + 'px')
-	}
-
-	window.addEventListener('resize', appHeight)
-	appHeight()
-
 	const location = useLocation()
 
 	const AnimatedOutlet = () => {
