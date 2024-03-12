@@ -11,6 +11,9 @@ const letterAnimationUp = {
 	hover: {
 		y: "-100%",
 		transition: {
+			repeat: Infinity,
+			repeatType: "mirror",
+			repeatDelay: 3,
 			duration: 0.5,
 			type: "spring",
             damping: 25,
@@ -26,6 +29,9 @@ const letterAnimationDown = {
 	hover: {
 		y: 0,
 		transition: {
+			repeat: Infinity,
+			repeatType: "mirror",
+			repeatDelay: 3,
 			duration: 0.5,
 			type: "spring",
             damping: 25,
