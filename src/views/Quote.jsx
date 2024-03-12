@@ -40,7 +40,9 @@ const Quote = () => {
             .then((response) => response.json())
             .then((data) => {
                 setQuote(data[0])
-                setIsLoading(false)
+                setTimeout(() => {
+                    setIsLoading(false)
+                }, 500);
             })
             .catch((error) => {
                 console.log(error)
