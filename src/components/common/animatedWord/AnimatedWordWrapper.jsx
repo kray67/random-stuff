@@ -9,33 +9,29 @@ const letterAnimationUp = {
 		y: 0,
 	},
 	hover: {
-		y: "-100%",
+		y: "-200px",
 		transition: {
 			repeat: Infinity,
-			repeatType: "mirror",
-			repeatDelay: 3,
+			repeatType: "loop",
+			repeatDelay: 7,
 			duration: 0.5,
-			type: "spring",
-            damping: 25,
-            stiffness: 500
+			
 		},
 	},
 }
 
 const letterAnimationDown = {
 	rest: {
-		y: "100%",
+		y: "200px",
 	},
 	hover: {
 		y: 0,
 		transition: {
 			repeat: Infinity,
-			repeatType: "mirror",
-			repeatDelay: 3,
+			repeatType: "loop",
+			repeatDelay: 7,
 			duration: 0.5,
-			type: "spring",
-            damping: 25,
-            stiffness: 500
+			
 		},
 	},
 }

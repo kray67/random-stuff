@@ -96,7 +96,10 @@ const Quote = () => {
                     </AnimatePresence>
                 </div>
 
-                <Button className="generate-btn" text={ `Generate ${btnText} Quote` } clicked={() => setFetchQuote(true)} />
+                <Button
+                className="generate-btn"
+                text={ `Generate ${btnText} Quote` }
+                clicked={() => setFetchQuote(true)} />
 
             </div>
 

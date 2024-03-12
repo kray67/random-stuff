@@ -208,7 +208,7 @@ const CardGrid = (props) => {
             </div>
         </div>
 
-        <AnimatePresence initial={false} mode="wait">
+        <AnimatePresence>
             { showModal &&
                 <Dialog params={endGameDialogParams} confirm={endGameHandler} cancel={() => hideDialog()} />
             }

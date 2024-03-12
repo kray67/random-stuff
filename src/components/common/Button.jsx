@@ -8,13 +8,15 @@ const Button = (props) => {
         props.clicked(ev)
     }
 
-    return <>
-        <div className={`btn${props.isBig ? ' big' : ''}${props.isSecondary ? ' secondary' : ''}${props.isDisabled ? ' disabled' : ''}`} onClick={() => onClickHandler()}>
+    return (
+        <div
+        className={`btn${props.isBig ? ' big' : ''}${props.isSecondary ? ' secondary' : ''}${props.isDisabled ? ' disabled' : ''}`}
+        onClick={() => onClickHandler()}>
             {props.text}
 
             { props.comingSoon && <div className="coming-soon">Coming Soon!</div> }
         </div>
-    </>
+    )
 }
 
 Button.propTypes = {

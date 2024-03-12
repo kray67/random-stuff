@@ -56,9 +56,6 @@ const Home = () => {
 			variants={staggerControl}
 			initial="initial"
 			animate="animate">
-				{/* <AnimatePresence>
-					{ displayRoutes }
-				</AnimatePresence> */}
 				{ displayRoutes }
 			</motion.div>
 		</AnimatePresence>
