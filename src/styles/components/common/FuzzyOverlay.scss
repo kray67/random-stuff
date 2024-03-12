@@ -1,0 +1,8 @@
+.fuzzy-overlay {
+    position: absolute;
+    background-image: url("@/assets/images/black-noise.png");
+    inset: -100%;
+    opacity: 15%;
+    pointer-events: none;
+    z-index: 1000;
+}

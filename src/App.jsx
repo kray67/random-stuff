@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import '@/styles/App.scss'
 import Header from '@/components/common/Header.jsx'
+import FuzzyOverlay from '@/components/common/FuzzyOverlay.jsx'
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
 
 	return (
 		<div id="App">
+			<FuzzyOverlay />
 			<Header />
 			<AnimatePresence initial={false} mode="wait">
 				<motion.div key={location.pathname} className="content"
