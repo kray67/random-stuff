@@ -4,10 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import '@/styles/App.scss'
 import Header from '@/components/common/Header.jsx'
 import FuzzyOverlay from '@/components/common/FuzzyOverlay.jsx'
+import Toggle from '@/components/common/Toggle'
 
 const App = () => {
 
 	const location = useLocation()
+
+	const [fuzzy, setFuzzy] = useState(false)
 
 	const AnimatedOutlet = () => {
 		const o = useOutlet();
@@ -18,7 +21,15 @@ const App = () => {
 
 	return (
 		<div id="App">
-			<FuzzyOverlay />
+			<Toggle
+			propClass="toggle-fuzzy"
+			text="FUZZY MODE"
+			clicked={() => setFuzzy(!fuzzy)} />
+			{
+				fuzzy &&
+				<FuzzyOverlay />
+			}
+			{/* <FuzzyOverlay /> */}
 			<Header />
 			<AnimatePresence initial={false} mode="wait">
 				<motion.div key={location.pathname} className="content"
