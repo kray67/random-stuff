@@ -13,7 +13,7 @@ const Toggle = (props) => {
     }
 
     return (
-        <div className={`toggle-wrapper ${props.propClass}`}>
+        <div className="toggle-wrapper">
 
             <div
             className={`toggle-outer ${toggled ? 'toggled' : ''}`}
@@ -31,7 +31,6 @@ const Toggle = (props) => {
 
 Toggle.propTypes = {
     text: PropTypes.string,
-    propClass: PropTypes.string,
     isDisabled: PropTypes.bool,
     clicked: PropTypes.func
 }

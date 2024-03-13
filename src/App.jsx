@@ -21,15 +21,25 @@ const App = () => {
 
 	return (
 		<div id="App">
-			<Toggle
-			propClass="toggle-fuzzy"
-			text="FUZZY MODE"
-			clicked={() => setFuzzy(!fuzzy)} />
+			{
+				location.pathname === '/' &&
+				<AnimatePresence mode="wait">
+					<motion.div
+					className="toggle-fuzzy"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{ duration: 0.5 }}>
+						<Toggle
+						text="FUZZY MODE"
+						clicked={() => setFuzzy(!fuzzy)} />
+					</motion.div>
+				</AnimatePresence>
+			}
 			{
 				fuzzy &&
 				<FuzzyOverlay />
 			}
-			{/* <FuzzyOverlay /> */}
 			<Header />
 			<AnimatePresence initial={false} mode="wait">
 				<motion.div key={location.pathname} className="content"
