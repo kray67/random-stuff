@@ -12,8 +12,12 @@
     }
 
     .toggle-outer {
-        width: 70px;
-        height: 40px;
+        --outer-height: 32px;
+        --iner-width: calc(var(--outer-height) - 8px);
+        --spacing: 2px;
+
+        width: calc(var(--outer-height)*1.8);
+        height: var(--outer-height);
         position: relative;
         border-radius: 1000px;
         cursor: pointer;
@@ -23,10 +27,10 @@
 
         .toggle-inner {
             position: absolute;
-            top: 2px;
-            left: calc(0% + 2px);
-            width: 32px;
-            height: 32px;
+            top: var(--spacing);
+            left: calc(0% + var(--spacing));
+            width: var(--iner-width);
+            height: var(--iner-width);
             border-radius: 100%;
             background-color: var(--clr-light-accent);
             border: 3px solid var(--clr-light-accent);
@@ -37,7 +41,7 @@
             background-color: var(--clr-disabled);
 
             .toggle-inner {
-                left: calc(100% - 34px);
+                left: calc(100% - var(--iner-width) - var(--spacing));
             }
         }
     }
