@@ -4,6 +4,7 @@ import Home from '@/views/Home'
 import Flip from '@/views/Flip'
 import Wordle from '@/views/Wordle'
 import Quote from '@/views/Quote'
+import BoxLoader from '@/views/BoxLoader'
 import ErrorPage from '@/views/ErrorPage'
 
 export const router = createBrowserRouter([
@@ -40,6 +41,14 @@ export const router = createBrowserRouter([
 				errorElement: <div>ERROR!</div>,
 				displayName: "Quotes",
 				linkText: "Quote Generator",
+				isAvailable: true
+			},
+			{
+				path: "/loader",
+				element: <BoxLoader />,
+				errorElement: <div>ERROR!</div>,
+				displayName: "Boxes Loader",
+				linkText: "Cool Boxes Loader",
 				isAvailable: true
 			}
 		]

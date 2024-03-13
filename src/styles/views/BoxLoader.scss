@@ -1,0 +1,46 @@
+#BoxLoader {
+    --box-width: 30px;
+    --box-spacing: calc((var(--box-width)/5*2));
+    --wrapper-height: calc(var(--box-width) + (var(--box-spacing)*2));
+
+    .box-loader-wrapper {
+        width: calc((var(--box-width)*5) + (var(--box-spacing)*6));
+        height: var(--wrapper-height);
+        position: relative;
+        // background-color: var(--clr-light-fade);
+
+        .box-0 { --multiplier: 0; }
+        .box-1 { --multiplier: 1; }
+        .box-2 { --multiplier: 2; }
+        .box-3 { --multiplier: 3; }
+        .box-4 { --multiplier: 4; }
+
+        .box {
+            position: absolute;
+            top: var(--box-spacing);
+            left: calc(
+                var(--box-spacing)
+                + (var(--box-spacing) * var(--multiplier))
+                + (var(--box-width) * var(--multiplier))
+            );
+
+            width: var(--box-width);
+            height: var(--box-width);
+            background-color: var(--clr-disabled);
+            transition: all 0.25s ease;
+
+            &.active {
+                background-color: var(--clr-light-accent);
+                border-radius: 50%;
+            }
+
+            &.moveUp {
+                transform: translateY(var(--wrapper-height)) rotate(180deg);
+            }
+
+            &.moveDown {
+                transform: translateY(calc(var(--wrapper-height) * -1)) rotate(-180deg);
+            }
+        }
+    }
+}
