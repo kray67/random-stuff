@@ -1,24 +1,23 @@
 import { useState } from 'react'
-import '@/styles/views/BoxLoader.scss'
+import { motion } from 'framer-motion'
+import PropTypes from 'prop-types'
+import '@/styles/components/common/BoxLoader.scss'
 
-const BoxLoader = () => {
+const BoxLoader = (props) => {
     const [box1, setBox1] = useState(1)
-    const [box2, setBox2] = useState(4)
-    
+    const [box2, setBox2] = useState(5)
+    const [box1Active, setBox1Active] = useState(false)
+    const [box2Active, setBox2Active] = useState(false)
+
     const boxes = document.getElementsByClassName('box')
 
     const getRandomNumbers = () => {
         let num1 = Math.floor(Math.floor(Math.random() * boxes.length)) // Generates a random number between 0 and 4
         let num2 = Math.floor(Math.floor(Math.random() * boxes.length)) // Generates another random number between 0 and 4
 
-        // Ensure num1 is different from previous numbers
-        while (num1 === box1 || num1 === box2) {
-            num1 = Math.floor(Math.random() * 5)
-        }
-
         // Ensure num2 is different from num1 and previous numbers
-        while (num2 === num1 || num2 === box1 || num2 === box2) {
-            num2 = Math.floor(Math.random() * 5)
+        while (num2 === num1) {
+            num2 = Math.floor(Math.random() * 7)
         }
 
         setBox1(num1)
@@ -26,13 +25,15 @@ const BoxLoader = () => {
     }
     
     const startMoving = () => {
+        if(box1Active || box2Active) return
         getRandomNumbers()
-
+        if(!box1 || box1 === null || !box2 || box2 === null) return
         animateBox1()
         animateBox2()
     }
 
     const animateBox1 = () => {
+        setBox1Active(true)
         const thisBox = boxes[box1]
         const otherBox = boxes[box2]
         const otherBoxStyles = getComputedStyle(otherBox)
@@ -42,14 +43,16 @@ const BoxLoader = () => {
         thisBox.classList.add('moveUp')
         setTimeout(() => {
             thisBox.style.left = otherBoxLeft
-        }, 750)
+        }, 500)
         setTimeout(() => {
             thisBox.classList.remove('moveUp')
             thisBox.classList.remove('active')
-        }, 1500)
+        }, 1000)
+        setBox1Active(false)
     }
 
     const animateBox2 = () => {
+        setBox2Active(true)
         const thisBox = boxes[box2]
         const otherBox = boxes[box1]
         const otherBoxStyles = getComputedStyle(otherBox)
@@ -59,31 +62,39 @@ const BoxLoader = () => {
         thisBox.classList.add('moveDown')
         setTimeout(() => {
             thisBox.style.left = otherBoxLeft
-        }, 750)
+        }, 500)
         setTimeout(() => {
             thisBox.classList.remove('moveDown')
             thisBox.classList.remove('active')
-        }, 1500)
+        }, 1000)
+        setBox2Active(false)
     }
 
     setTimeout(() => {
         startMoving()
-    }, 3000)
+    }, 1500)
 
     return (
-        <div
-        id="BoxLoader"
-        key="boxLoader"
-        className="view-wrapper">
-            <div id="boxWrapper" className="box-loader-wrapper">
-                <div className="box box-0"></div>
-                <div className="box box-1"></div>
-                <div className="box box-2"></div>
-                <div className="box box-3"></div>
-                <div className="box box-4"></div>
-            </div>
-        </div>
+        <motion.div
+        id="boxWrapper"
+        className={`box-loader-wrapper ${props.size}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}>
+            <div className="box box-0"></div>
+            <div className="box box-1"></div>
+            <div className="box box-2"></div>
+            <div className="box box-3"></div>
+            <div className="box box-4"></div>
+            <div className="box box-5"></div>
+            <div className="box box-6"></div>
+        </motion.div>
     )
+}
+
+BoxLoader.propTypes = {
+    size: PropTypes.string
 }
 
 export default BoxLoader

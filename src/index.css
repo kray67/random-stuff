@@ -72,6 +72,7 @@ body, html{
     --clr-light-accent: hsl(0, 0%, 95%);
     --clr-light-fade: hsl(0, 0%, 30%);
     --clr-disabled: hsla(0, 0%, 80%, 0.4);
+    --clr-disabled-fade: hsla(0, 0%, 80%, 0.1);
     --clr-dark: hsl(0, 0%, 15%);
     --clr-dark-transparent: hsla(0, 0%, 15%, 0.95);
     --clr-detail: hsl(248, 53%, 50%);

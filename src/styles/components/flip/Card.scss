@@ -14,12 +14,6 @@
     &:hover,
     &:focus {
         scale: 1.15;
-
-        .card-inner {
-            .card-front {
-                // background-color: var(--clr-detail-accent);
-            }
-        }
     }
 
     &.flipped {
