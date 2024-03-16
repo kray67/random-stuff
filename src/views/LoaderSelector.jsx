@@ -1,36 +1,49 @@
 import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import '@/styles/views/LoaderSelector.scss'
 import Button from '@/components/common/Button'
 import BoxLoader from '@/components/common/BoxLoader'
+import PlusIcon from '@/assets/icons/plus.svg?react'
+import MinusIcon from '@/assets/icons/minus.svg?react'
 
 const LoaderSelector = () => {
     const [size, setSize] = useState('medium')
+    const [totalBoxes, setTotalBoxes] = useState(5)
 
     return (
         <div
         id="BoxLoader"
         key="boxLoader"
         className="view-wrapper">
-            <div className="buttons-wrapper">
-                <Button
-                text="BIG"
-                isDisabled={size === 'big'}
-                clicked={() => setSize('big')}/>
-                <Button
-                text="MEDIUM"
-                isDisabled={size === 'medium'}
-                clicked={() => setSize('medium')}/>
-                <Button
-                text="SMALL"
-                isDisabled={size === 'small'}
-                clicked={() => setSize('small')}/>
+            <div className="commands">
+                <div className="buttons-wrapper">
+                    <Button
+                    text="BIG"
+                    isDisabled={size === 'big'}
+                    clicked={() => setSize('big')}/>
+                    <Button
+                    text="MEDIUM"
+                    isDisabled={size === 'medium'}
+                    clicked={() => setSize('medium')}/>
+                    <Button
+                    text="SMALL"
+                    isDisabled={size === 'small'}
+                    clicked={() => setSize('small')}/>
+                </div>
+                <div className="controls-wrapper">
+                    <div className={`control ${totalBoxes < 3 ? 'disabled' : ''}`} onClick={() => setTotalBoxes(totalBoxes - 1)}>
+                        <MinusIcon />
+                    </div>
+                    <div className="total">{totalBoxes} boxes</div>
+                    <div className={`control ${totalBoxes > 10 ? 'disabled' : ''}`} onClick={() => setTotalBoxes(totalBoxes + 1)}>
+                        <PlusIcon />
+                    </div>
+                </div>
             </div>
-            
-            { size === 'big' && <BoxLoader size={size} /> }
-            { size === 'medium' && <BoxLoader size={size} /> }
-            { size === 'small' && <BoxLoader size={size} /> }
 
-            {/* <BoxLoader size={size} /> */}
+            <AnimatePresence mode='wait'>
+                <BoxLoader key={`${size}-${totalBoxes}`} size={size} totalBoxes={totalBoxes} />
+            </AnimatePresence>
         </div>
     )
 }

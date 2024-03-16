@@ -1,100 +1,60 @@
-import { useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import '@/styles/components/common/BoxLoader.scss'
+import { useBoxLoader } from '@/hooks/useBoxLoader'
+ 
+// const NUMBER_OF_BOXES = 10
+const ANIMATION_CYCLE_INTERVAL = 1500
+const ANIMATION_VERTICAL_DURATION = 500
+const ANIMATION_HORIZONTAL_DURATION = 1000
 
-const BoxLoader = (props) => {
-    const [box1, setBox1] = useState(1)
-    const [box2, setBox2] = useState(5)
-    const [box1Active, setBox1Active] = useState(false)
-    const [box2Active, setBox2Active] = useState(false)
+const BoxLoader = ({size, totalBoxes}) => {
 
-    const boxes = document.getElementsByClassName('box')
+    const NUMBER_OF_BOXES = totalBoxes
 
-    const getRandomNumbers = () => {
-        let num1 = Math.floor(Math.floor(Math.random() * boxes.length)) // Generates a random number between 0 and 4
-        let num2 = Math.floor(Math.floor(Math.random() * boxes.length)) // Generates another random number between 0 and 4
+    const boxesWrapperRef = useRef(null);
+    const { initiateAnimationCycle } = useBoxLoader({
+        boxesWrapperRef,
+        numberOfBoxes: NUMBER_OF_BOXES,
+        verticalDuration: ANIMATION_VERTICAL_DURATION,
+        horizontalDuration: ANIMATION_HORIZONTAL_DURATION
+    })
 
-        // Ensure num2 is different from num1 and previous numbers
-        while (num2 === num1) {
-            num2 = Math.floor(Math.random() * 7)
-        }
+    useEffect(() => {
+        boxesWrapperRef.current.style.setProperty('--total-boxes', NUMBER_OF_BOXES)
+        initiateAnimationCycle()
+        const interval = setInterval(() => {
+            initiateAnimationCycle()
+        }, ANIMATION_CYCLE_INTERVAL)
 
-        setBox1(num1)
-        setBox2(num2)
-    }
+        return () => clearInterval(interval)
+    }, [initiateAnimationCycle, NUMBER_OF_BOXES])
     
-    const startMoving = () => {
-        if(box1Active || box2Active) return
-        getRandomNumbers()
-        if(!box1 || box1 === null || !box2 || box2 === null) return
-        animateBox1()
-        animateBox2()
-    }
-
-    const animateBox1 = () => {
-        setBox1Active(true)
-        const thisBox = boxes[box1]
-        const otherBox = boxes[box2]
-        const otherBoxStyles = getComputedStyle(otherBox)
-        const otherBoxLeft = otherBoxStyles.getPropertyValue('left')
-
-        thisBox.classList.add('active')
-        thisBox.classList.add('moveUp')
-        setTimeout(() => {
-            thisBox.style.left = otherBoxLeft
-        }, 500)
-        setTimeout(() => {
-            thisBox.classList.remove('moveUp')
-            thisBox.classList.remove('active')
-        }, 1000)
-        setBox1Active(false)
-    }
-
-    const animateBox2 = () => {
-        setBox2Active(true)
-        const thisBox = boxes[box2]
-        const otherBox = boxes[box1]
-        const otherBoxStyles = getComputedStyle(otherBox)
-        const otherBoxLeft = otherBoxStyles.getPropertyValue('left')
-
-        thisBox.classList.add('active')
-        thisBox.classList.add('moveDown')
-        setTimeout(() => {
-            thisBox.style.left = otherBoxLeft
-        }, 500)
-        setTimeout(() => {
-            thisBox.classList.remove('moveDown')
-            thisBox.classList.remove('active')
-        }, 1000)
-        setBox2Active(false)
-    }
-
-    setTimeout(() => {
-        startMoving()
-    }, 1500)
-
     return (
         <motion.div
         id="boxWrapper"
-        className={`box-loader-wrapper ${props.size}`}
+        ref={boxesWrapperRef}
+        className={`box-loader-wrapper ${size}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}>
-            <div className="box box-0"></div>
-            <div className="box box-1"></div>
-            <div className="box box-2"></div>
-            <div className="box box-3"></div>
-            <div className="box box-4"></div>
-            <div className="box box-5"></div>
-            <div className="box box-6"></div>
+            {Array(NUMBER_OF_BOXES).fill().map((_, i) => (
+                <div key={i} className={`box box-${i}`}></div>
+            ))}
         </motion.div>
     )
 }
 
 BoxLoader.propTypes = {
-    size: PropTypes.string
+    size: PropTypes.string,
+    totalBoxes: PropTypes.number
+}
+
+BoxLoader.defaultProps = {
+    size: 'medium',
+    totalBoxes: 5
 }
 
 export default BoxLoader

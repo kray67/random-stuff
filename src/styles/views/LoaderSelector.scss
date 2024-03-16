@@ -1,15 +1,43 @@
 #BoxLoader {
     justify-content: space-between !important;
 
-    .buttons-wrapper {
+    .buttons-wrapper, .controls-wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 20px;
+    }
+    
+    .controls-wrapper {
+        margin-top: 30px;
+        font-size: 24px;
+    }
 
-        .btn {
-            min-width: 100px;
-            font-size: 16px;
+    .btn {
+        min-width: 100px;
+        font-size: 16px;
+    }
+    
+    .control {
+        cursor: pointer;
+
+        svg {
+            width: 36px;
+            height: 36px;
+            fill: var(--clr-light);
+        }
+
+        &.disabled {
+            cursor: default;
+            pointer-events: none;
+
+            svg {
+                width: 36px;
+                height: 36px;
+                fill: var(--clr-disabled);
+            }
         }
     }
+
+    .total {}
 }
