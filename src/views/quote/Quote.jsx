@@ -40,9 +40,7 @@ const Quote = () => {
             .then((response) => response.json())
             .then((data) => {
                 setQuote(data[0])
-                setTimeout(() => {
-                    setIsLoading(false)
-                }, 500);
+                setIsLoading(false)
             })
             .catch((error) => {
                 console.log(error)
@@ -50,7 +48,7 @@ const Quote = () => {
             })
 
         setFetchQuote(false)
-    }, [fetchQuote])
+    }, [fetchQuote, quoteCategory])
 
     return (
         <div

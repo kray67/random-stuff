@@ -3,8 +3,7 @@ import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import './BoxLoader.scss'
 import { useBoxLoader } from '@/hooks/useBoxLoader'
- 
-// const NUMBER_OF_BOXES = 10
+
 const ANIMATION_CYCLE_INTERVAL = 1500
 const ANIMATION_VERTICAL_DURATION = 500
 const ANIMATION_HORIZONTAL_DURATION = 1000

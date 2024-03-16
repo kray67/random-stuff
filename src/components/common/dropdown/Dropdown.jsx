@@ -5,7 +5,13 @@ import './Dropdown.scss'
 import DropdownRow from '@/components/common/dropdown/DropdownRow'
 import ArrowDownIcon from '@/assets/icons/arrow-down.svg?react'
 
-const Dropdown = (props) => {
+const Dropdown = ({
+    options,
+    label,
+    placeholder,
+    selectedOption,
+    updateSelected
+}) => {
 
     const [dropdownIsOpen, setDropdownIsOpen] = useState(false)
     const dropdownRef = useRef(null)
@@ -15,17 +21,17 @@ const Dropdown = (props) => {
     }
 
     const rowClicked = (id) => {
-        props.updateSelected(id)
+        updateSelected(id)
         setDropdownIsOpen(false)
     }
 
-    const selectedId = props.selectedOption ? props.selectedOption.toString() : null
+    const selectedId = selectedOption ? selectedOption.toString() : null
 
-    const selectedHeaderText = props.selectedOption
-                ? props.options.filter((option) => option.id === props.selectedOption)[0].text
-                : props.placeholder
+    const selectedHeaderText = selectedOption
+                ? options.filter((option) => option.id === selectedOption)[0].text
+                : placeholder
 
-    const dropdownRows = props.options.map((option) => {
+    const dropdownRows = options.map((option) => {
         return <DropdownRow
         key={ option.id }
         option={ option }
@@ -40,8 +46,8 @@ const Dropdown = (props) => {
 
                 {/* DROPDOWN LABEL */}
                 {
-                    props.label &&
-                        <div className="label">{ props.label }</div>
+                    label &&
+                        <div className="label">{ label }</div>
                 }
 
                 {/* DROPDOWN CONTENT */}
@@ -57,7 +63,7 @@ const Dropdown = (props) => {
 
                         {/* TOGGLE DROPDOWN ARROW ICON */}
                         {
-                            (props.options && props.options.length > 1) &&
+                            (options && options.length > 1) &&
                                 <div className="dropdown-toggle-icon-wrapper">
                                     <ArrowDownIcon />
                                 </div>
