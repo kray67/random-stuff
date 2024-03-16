@@ -2,10 +2,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { fetchQuotesAPI } from '@/network/quotes.api.js'
 import { categoriesList } from '@/assets/scripts/quoteHelpers.js'
-import '@/styles/views/Quote.scss'
-import Spinner from '@/components/common/Spinner'
+import './Quote.scss'
+import Spinner from '@/components/common/spinner/Spinner'
 import Dropdown from '@/components/common/dropdown/Dropdown'
-import Button from '@/components/common/Button'
+import Button from '@/components/common/button/Button'
 
 const Quote = () => {
 

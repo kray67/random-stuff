@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import '@/styles/components/common/Dropdown.scss'
+import './Dropdown.scss'
 
 const DropdownRow = (props) => {
 

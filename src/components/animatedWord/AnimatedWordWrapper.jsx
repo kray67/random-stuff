@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
-import '@/styles/components/common/AnimatedWordWrapper.scss'
-import AnimatedWord from '@/components/common/animatedWord/AnimatedWord'
+import './AnimatedWordWrapper.scss'
+import AnimatedWord from '@/components/animatedWord/AnimatedWord'
 
 const letterAnimationUp = {
 	rest: {

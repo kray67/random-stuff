@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
-import '@/styles/components/common/Dialog.scss'
-import Overlay from '@/components/common/Overlay'
-import Button from '@/components/common/Button'
+import './Dialog.scss'
+import Overlay from '@/components/common/overlay/Overlay'
+import Button from '@/components/common/button/Button'
 
 const dropIn = {
     initial: {

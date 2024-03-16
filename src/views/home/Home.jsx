@@ -1,8 +1,8 @@
 import { router } from '@/routes/router.jsx'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import '@/styles/views/Home.scss'
-import Button from '@/components/common/Button'
+import './Home.scss'
+import Button from '@/components/common/button/Button'
 
 const staggerControl = {
 	initial: {

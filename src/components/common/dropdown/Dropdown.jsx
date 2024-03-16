@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler'
 import PropTypes from 'prop-types'
-import '@/styles/components/common/Dropdown.scss'
+import './Dropdown.scss'
 import DropdownRow from '@/components/common/dropdown/DropdownRow'
 import ArrowDownIcon from '@/assets/icons/arrow-down.svg?react'
 

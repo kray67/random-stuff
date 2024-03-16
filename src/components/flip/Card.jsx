@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import '@/styles/components/flip/Card.scss'
+import './Card.scss'
 
 const Card = (props) => {
 

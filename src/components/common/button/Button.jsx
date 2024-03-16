@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import '@/styles/components/common/Button.scss'
+import './Button.scss'
 
 const Button = (props) => {
 

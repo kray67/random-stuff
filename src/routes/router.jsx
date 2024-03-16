@@ -1,11 +1,11 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
 import App from '@/App.jsx'
-import Home from '@/views/Home'
-import Flip from '@/views/Flip'
-import Wordle from '@/views/Wordle'
-import Quote from '@/views/Quote'
-import LoaderSelector from '@/views/LoaderSelector'
-import ErrorPage from '@/views/ErrorPage'
+import Home from '@/views/home/Home'
+import Flip from '@/views/flip/Flip'
+import Wordle from '@/views/wordle/Wordle'
+import Quote from '@/views/quote/Quote'
+import LoaderSelector from '@/views/loaderSelector/LoaderSelector'
+import ErrorPage from '@/views/errorPage/ErrorPage'
 
 export const router = createBrowserRouter([
 	{	

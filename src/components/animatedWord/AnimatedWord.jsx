@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import PropTypes from 'prop-types'
-import '@/styles/components/common/AnimatedWordWrapper.scss'
-import AnimatedLetter from '@/components/common/animatedWord/AnimatedLetter'
+import './AnimatedWordWrapper.scss'
+import AnimatedLetter from '@/components/animatedWord/AnimatedLetter'
 
 const wordAnimation = {
 	rest: {

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
 import { createPortal } from 'react-dom'
-import '@/styles/components/common/Overlay.scss'
+import './Overlay.scss'
 
 const Overlay = ({ children, onClick }) => {
 

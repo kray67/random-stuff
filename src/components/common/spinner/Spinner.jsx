@@ -1,4 +1,4 @@
-import '@/styles/components/common/Spinner.scss'
+import './Spinner.scss'
 
 const Spinner = () => {
 

@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { cardsArray, shuffleCards } from '@/assets/scripts/flipHelpers.js'
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence } from 'framer-motion'
 import PropTypes from 'prop-types'
-import '@/styles/components/flip/CardGrid.scss'
+import './CardGrid.scss'
 import Card from '@/components/flip/Card'
-import Dialog from '@/components/common/Dialog'
+import Dialog from '@/components/common/dialog/Dialog'
 
 const CardGrid = (props) => {
     

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import '@/styles/components/common/Toggle.scss'
+import './Toggle.scss'
 
 const Toggle = (props) => {
 

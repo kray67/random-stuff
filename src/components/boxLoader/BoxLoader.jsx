@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
-import '@/styles/components/common/BoxLoader.scss'
+import './BoxLoader.scss'
 import { useBoxLoader } from '@/hooks/useBoxLoader'
  
 // const NUMBER_OF_BOXES = 10

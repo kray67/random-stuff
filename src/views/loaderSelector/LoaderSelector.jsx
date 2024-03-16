@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
-import '@/styles/views/LoaderSelector.scss'
-import Button from '@/components/common/Button'
-import BoxLoader from '@/components/common/BoxLoader'
+import './LoaderSelector.scss'
+import Button from '@/components/common/button/Button'
+import BoxLoader from '@/components/boxLoader/BoxLoader'
 import PlusIcon from '@/assets/icons/plus.svg?react'
 import MinusIcon from '@/assets/icons/minus.svg?react'
 

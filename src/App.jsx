@@ -1,10 +1,10 @@
 import { useLocation, useOutlet } from 'react-router-dom'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import '@/styles/App.scss'
-import Header from '@/components/common/Header.jsx'
-import FuzzyOverlay from '@/components/common/FuzzyOverlay.jsx'
-import Toggle from '@/components/common/Toggle'
+import './App.scss'
+import Header from '@/components/common/header/Header.jsx'
+import FuzzyOverlay from '@/components/fuzzyOverlay/FuzzyOverlay.jsx'
+import Toggle from '@/components/common/toggle/Toggle'
 
 const App = () => {
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import PropTypes from 'prop-types'
-import '@/styles/components/common/AnimatedWordWrapper.scss'
+import './AnimatedWordWrapper.scss'
 
 const AnimatedLetter = ({ character, animation }) => {
 

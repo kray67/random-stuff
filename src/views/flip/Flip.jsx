@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
-import '@/styles/views/Flip.scss'
-import Button from '@/components/common/Button'
+import './Flip.scss'
+import Button from '@/components/common/button/Button'
 import CardGrid from '@/components/flip/CardGrid.jsx'
 
 const Flip = () => {

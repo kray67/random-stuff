@@ -1,5 +1,5 @@
-import '@/styles/views/Wordle.scss'
-import AnimatedWordWrapper from '@/components/common/animatedWord/AnimatedWordWrapper'
+import './Wordle.scss'
+import AnimatedWordWrapper from '@/components/animatedWord/AnimatedWordWrapper'
 
 const Wordle = () => {
 
