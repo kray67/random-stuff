@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import { cardsArray, shuffleCards } from '@/assets/scripts/flipHelpers.js'
 import { AnimatePresence } from 'framer-motion'
-import PropTypes from 'prop-types'
 import './CardGrid.scss'
 import Card from '@/components/flip/Card'
 import Dialog from '@/components/common/dialog/Dialog'
 
-const CardGrid = (props) => {
+const CardGrid = ({flips, gameOver}) => {
     
     /* ***** Use States ***** */
     // Cards Related
@@ -23,7 +22,7 @@ const CardGrid = (props) => {
     const [minutes, setMinutes] = useState('00')
 
     // Flips Related
-    const [userFlips, setUserFlips] = useState(props.flips)
+    const [userFlips, setUserFlips] = useState(flips)
     const [noMoreFlips, setNoMoreFlips] = useState(false)
     
     // Modal Related
@@ -122,7 +121,7 @@ const CardGrid = (props) => {
         setGameIsRunning(false)
         // Reset the timer value to 0
         setElapsedTime(0)
-        setTimeout(() => { props.gameOver({minutes, seconds}, userFlips, false) }, 1000)
+        setTimeout(() => { gameOver({minutes, seconds}, userFlips, false) }, 1000)
     }
 
     /* ***** Use Effects ***** */
@@ -141,7 +140,7 @@ const CardGrid = (props) => {
             setNoMoreFlips(true)
             const allCardsFlipped = cardsList.map(card => { return {...card, isFlipped: true} })
             setCardsList(allCardsFlipped)
-            setTimeout(() => { props.gameOver({minutes, seconds}, userFlips, false) }, 3000)
+            setTimeout(() => { gameOver({minutes, seconds}, userFlips, false) }, 3000)
         }
     }, [userFlips])
 
@@ -151,7 +150,7 @@ const CardGrid = (props) => {
         const totalSolved = cardsList.filter(card => card.isSolved).length
         if (totalSolved === cardsList.length) {
             setAllSolved(true)
-            setTimeout(() => { props.gameOver({minutes, seconds}, userFlips, true) }, 1000)
+            setTimeout(() => { gameOver({minutes, seconds}, userFlips, true) }, 1000)
         }
     }, [cardsList])
 
@@ -214,11 +213,6 @@ const CardGrid = (props) => {
             }
         </AnimatePresence>
     </>
-}
-
-CardGrid.propTypes = {
-    flips: PropTypes.number,
-    gameOver: PropTypes.func
 }
 
 export default CardGrid

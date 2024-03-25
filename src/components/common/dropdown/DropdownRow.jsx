@@ -1,27 +1,20 @@
-import PropTypes from 'prop-types'
 import './Dropdown.scss'
 
-const DropdownRow = (props) => {
+const DropdownRow = ({option, clicked, selected}) => {
 
     const clickHandler = () => {
-        props.clicked(props.option.id)
+        clicked(option.id)
     }
 
     return (
         <>
         
-            <div className="option" onClick={ () => clickHandler() }>
-                { props.option.text.charAt(0).toUpperCase() + props.option.text.slice(1) }
+            <div className={`option ${selected ? 'selected' : ''}`} onClick={ () => clickHandler() }>
+                { option.text.charAt(0).toUpperCase() + option.text.slice(1) }
             </div>
 
         </>
     )
-}
-
-DropdownRow.propTypes = {
-    option: PropTypes.object,
-    selected: PropTypes.bool,
-    clicked: PropTypes.func
 }
 
 export default DropdownRow

@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 import './BoxLoader.scss'
 import { useBoxLoader } from '@/hooks/useBoxLoader'
 
@@ -44,11 +43,6 @@ const BoxLoader = ({size, totalBoxes}) => {
             ))}
         </motion.div>
     )
-}
-
-BoxLoader.propTypes = {
-    size: PropTypes.string,
-    totalBoxes: PropTypes.number
 }
 
 BoxLoader.defaultProps = {

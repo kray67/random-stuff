@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react'
 import OutsideClickHandler from 'react-outside-click-handler'
-import PropTypes from 'prop-types'
 import './Dropdown.scss'
 import DropdownRow from '@/components/common/dropdown/DropdownRow'
 import ArrowDownIcon from '@/assets/icons/arrow-down.svg?react'
@@ -79,14 +78,6 @@ const Dropdown = ({
             </div>
         </OutsideClickHandler>
     )
-}
-
-Dropdown.propTypes = {
-    options: PropTypes.array,
-    label: PropTypes.string,
-    placeholder: PropTypes.string,
-    selectedOption: PropTypes.number,
-    updateSelected: PropTypes.func
 }
 
 export default Dropdown

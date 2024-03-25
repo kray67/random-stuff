@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 import './AnimatedWordWrapper.scss'
 import AnimatedLetter from '@/components/animatedWord/AnimatedLetter'
 
@@ -37,12 +36,6 @@ const AnimatedWord = ({ word, animation, animationStart }) => {
         </motion.div>
         </AnimatePresence>
     )
-}
-
-AnimatedWord.propTypes = {
-    word: PropTypes.string,
-    animation: PropTypes.object,
-    animationStart: PropTypes.bool
 }
 
 export default AnimatedWord

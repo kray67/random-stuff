@@ -1,19 +1,18 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 import './Toggle.scss'
 
-const Toggle = (props) => {
+const Toggle = ({text, isDisabled, clicked}) => {
 
     const [toggled, setToggled] = useState()
 
     const onClickHandler = (ev) => {
-        if(!props.clicked) return
+        if(!clicked) return
         setToggled((pv) => !pv)
-        props.clicked(ev)
+        clicked(ev)
     }
 
     return (
-        <div className="toggle-wrapper">
+        <div className={`toggle-wrapper ${isDisabled ? 'disabled' : ''}`}>
 
             <div
             className={`toggle-outer ${toggled ? 'toggled' : ''}`}
@@ -22,17 +21,11 @@ const Toggle = (props) => {
             </div>
 
             <div className="label">
-                { props.text }
+                { text }
             </div>
 
         </div>
     )
-}
-
-Toggle.propTypes = {
-    text: PropTypes.string,
-    isDisabled: PropTypes.bool,
-    clicked: PropTypes.func
 }
 
 export default Toggle

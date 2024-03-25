@@ -1,26 +1,19 @@
-import PropTypes from 'prop-types'
 import './Card.scss'
 
-const Card = (props) => {
+const Card = ({data, clicked, isDisabled}) => {
 
     const clickHandler = () => {
-        props.clicked(props.data.id)
+        clicked(data.id)
     }
 
     return <>
-        <div className={`card-wrapper${props.data.isFlipped ? ' flipped' : ''}${props.data.isSolved ? ' solved' : ''}${props.isDisabled ? ' disabled' : ''}`} onClick={() => clickHandler()}>
+        <div className={`card-wrapper${data.isFlipped ? ' flipped' : ''}${data.isSolved ? ' solved' : ''}${isDisabled ? ' disabled' : ''}`} onClick={() => clickHandler()}>
             <div className="card-inner">
                 <div className="card-front">❔</div>
-                <div className="card-back" style={{backgroundColor: props.data.group}}>{props.data.emoji}</div>
+                <div className="card-back" style={{backgroundColor: data.group}}>{data.emoji}</div>
             </div>
         </div>
     </>
-}
-
-Card.propTypes = {
-    data: PropTypes.object,
-    clicked: PropTypes.func,
-    isDisabled: PropTypes.bool
 }
 
 export default Card

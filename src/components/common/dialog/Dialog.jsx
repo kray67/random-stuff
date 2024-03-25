@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 import './Dialog.scss'
 import Overlay from '@/components/common/overlay/Overlay'
 import Button from '@/components/common/button/Button'
@@ -26,14 +25,14 @@ const dropIn = {
     }
 }
 
-const Dialog = (props) => {
+const Dialog = ({params, confirm, cancel}) => {
 
     const cancelHandler = () => {
-        props.cancel(true)
+        cancel(true)
     }
 
     const confirmHandler = () => {
-        props.confirm(true)
+        confirm(true)
     }
 
     return (
@@ -46,22 +45,16 @@ const Dialog = (props) => {
             animate="animate"
             exit="exit">
                 <div className="dialog-container">
-                    <div className="title">{props.params.title}</div>
-                    <div className="message">{props.params.message}</div>
+                    <div className="title">{params.title}</div>
+                    <div className="message">{params.message}</div>
                     <div className="buttons">
-                        <Button text={props.params.confirmBtnText} clicked={confirmHandler} />
-                        <Button text={props.params.cancelBtnText} clicked={cancelHandler} />
+                        <Button text={params.confirmBtnText} clicked={confirmHandler} />
+                        <Button text={params.cancelBtnText} clicked={cancelHandler} />
                     </div>
                 </div>
             </motion.div>
         </Overlay>
     )
-}
-
-Dialog.propTypes = {
-    params: PropTypes.object,
-    confirm: PropTypes.func,
-    cancel: PropTypes.func
 }
 
 export default Dialog

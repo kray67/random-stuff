@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types'
 import { motion } from 'framer-motion'
 import './AnimatedWordWrapper.scss'
 import AnimatedWord from '@/components/animatedWord/AnimatedWord'
@@ -53,12 +52,6 @@ const AnimatedWordWrapper = ({ word, animationDelay, textStyle }) => {
 			</div>
 		</motion.div>
 	)
-}
-
-AnimatedWordWrapper.propTypes = {
-    word: PropTypes.string,
-	animationDelay: PropTypes.number,
-	textStyle: PropTypes.string
 }
 
 export default AnimatedWordWrapper

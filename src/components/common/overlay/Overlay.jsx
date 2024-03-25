@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import PropTypes from 'prop-types'
 import { createPortal } from 'react-dom'
 import './Overlay.scss'
 
@@ -19,11 +18,6 @@ const Overlay = ({ children, onClick }) => {
             document.getElementById('overlay-wrapper')
         )
     )
-}
-
-Overlay.propTypes = {
-    children: PropTypes.object,
-    onClick: PropTypes.func
 }
 
 export default Overlay
