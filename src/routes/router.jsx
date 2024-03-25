@@ -4,6 +4,7 @@ import Home from '@/views/home/Home'
 import Flip from '@/views/flip/Flip'
 import Wordle from '@/views/wordle/Wordle'
 import Quote from '@/views/quote/Quote'
+import Playground from '@/views/playground/Playground'
 import LoaderSelector from '@/views/loaderSelector/LoaderSelector'
 import ErrorPage from '@/views/errorPage/ErrorPage'
 
@@ -49,6 +50,14 @@ export const router = createBrowserRouter([
 				errorElement: <ErrorPage />,
 				displayName: "Boxes Loader",
 				linkText: "Cool Boxes Loader",
+				isAvailable: true
+			},
+			{
+				path: "/playground",
+				element: <Playground />,
+				errorElement: <ErrorPage />,
+				displayName: "Playground",
+				linkText: "Playground",
 				isAvailable: true
 			}
 		]

@@ -4,6 +4,7 @@ import { fetchQuotesAPI } from '@/network/quotes.api.js'
 import { categoriesList } from '@/assets/scripts/quoteHelpers.js'
 import './Quote.scss'
 import Spinner from '@/components/common/spinner/Spinner'
+// import Spinner2 from '@/components/common/spinner-2/Spinner2'
 import Dropdown from '@/components/common/dropdown/Dropdown'
 import Button from '@/components/common/button/Button'
 
@@ -76,6 +77,7 @@ const Quote = () => {
                             transition={{ duration: 0.1 }}>
                                 <Spinner />
                             </motion.div>
+                            // <Spinner2 key="spinner2" />
                     }
 
                     {
