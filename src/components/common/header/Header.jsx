@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { router } from '@/routes/router.jsx'
 import './Header.scss'
-import BackIcon from '@/assets/icons/back.svg?react'
+import SlideMenu from '@/components/common/slideMenu/SlideMenu'
 
 const Header = () => {
 
@@ -22,12 +22,7 @@ const Header = () => {
 
     return (
         <div className="header-wrapper">
-            {
-                pathname !== '/'
-                    &&  <Link className="nostyle home-btn" to="/">
-                            <BackIcon />
-                        </Link>
-            }
+            <Link className={`nostyle home-btn ${pathname === '/' ? 'disabled' : ''}`} to="/">RS</Link>
             <AnimatePresence mode="wait">
                 <motion.div
                 key={displayName}
@@ -39,6 +34,8 @@ const Header = () => {
                     {displayName}
                 </motion.div>
             </AnimatePresence>
+            <div className="spacer-div"></div>
+            <SlideMenu />
         </div>
     )
 }

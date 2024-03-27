@@ -51,7 +51,6 @@ const Home = () => {
 		<AnimatePresence>
 			<motion.div
 			id="Home"
-			key="home"
 			className="view-wrapper"
 			variants={staggerControl}
 			initial="initial"

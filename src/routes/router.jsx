@@ -15,9 +15,11 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
+				path: "/",
 				element: <Home />,
 				errorElement: <ErrorPage />,
 				displayName: 'Random Stuff',
+				linkText: "Home",
 				hideInHome: true
 			},
 			{

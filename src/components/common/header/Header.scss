@@ -2,79 +2,41 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100px;
+    justify-content: space-between;
+    padding: calc(var(--padding-size) / 2) calc(var(--padding-size) * 2);
+    // background-color: var(--clr-secondary);
     z-index: 2;
 
     .home-btn {
-        position: absolute;
-        left: 48px;
+        font-size: 2.5rem;
         cursor: pointer;
+        transition: color 0.5s;
 
-        svg {
-            width: 48px;
-            height: 48px;
+        &:not(.disabled) {
+            &:hover,
+            &:focus {
+                color: var(--clr-tertiary);
+            }
+        }
+
+        &.disabled {
+            cursor: default;
+            pointer-events: none;
         }
     }
 
     .header-title {
         position: relative;
-        padding: 10px;
-        font-size: 40px;
-        transition: all 0.25s;
+        font-size: 2rem;
+        margin-inline: auto;
         cursor: default;
-
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            scale: 0 1;
-            background-color: var(--clr-light-accent);
-            transition: all 0.25s;
-        }
-
-        &:hover,
-        &:focus {
-            color: var(--clr-light-accent);
-
-            &::after {
-                scale: 1 1;
-            }
-        }
     }
-}
 
-@media (max-width: 600px) {
-    .header-wrapper {
-        height: 60px;
-
-        .home-btn {
-            left: 16px;
-
-            svg {
-                width: 36px;
-                height: 36px;
-            }
-        }
-
-        .header-title {
-            padding: 5px;
-            font-size: 30px;
-
-            &::after {
-                scale: 0 1;
-            }
-
-            &:hover,
-            &:focus {
-                color: var(--clr-light);
-                &::after {
-                    scale: 0 1;
-                }
-            }
-        }
+    .spacer-div {
+        visibility: hidden;
+        cursor: default;
+        pointer-events: none;
+        width: 50px;
+        height: 50px;
     }
 }
