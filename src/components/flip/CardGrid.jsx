@@ -3,6 +3,7 @@ import { cardsArray, shuffleCards } from '@/assets/scripts/flipHelpers.js'
 import { AnimatePresence } from 'framer-motion'
 import './CardGrid.scss'
 import Card from '@/components/flip/Card'
+import Button from '@/components/common/button/Button'
 import Dialog from '@/components/common/dialog/Dialog'
 
 const CardGrid = ({flips, gameOver}) => {
@@ -201,8 +202,8 @@ const CardGrid = ({flips, gameOver}) => {
                 
                 { 
                     gameIsRunning
-                    ? <button className="btn" onClick={() => showDialog()}>End Game</button>
-                    :<button className="btn" onClick={() => startGame()}>Start Game</button>
+                    ? <Button text="End Game" clicked={() => showDialog()} />
+                    : <Button text="Start Game" clicked={() => startGame()} />
                 }
             </div>
         </div>

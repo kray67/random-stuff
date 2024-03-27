@@ -13,7 +13,7 @@
     padding: 24px;
     margin-inline: 50px;
     border-radius: 12px;
-    outline: 2px solid var(--clr-light);
+    outline: 2px solid var(--clr-text);
 
     .start-btn {
         position: absolute;
@@ -21,8 +21,8 @@
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        background-color: var(--clr-dark);
-        border-color: var(--clr-light);
+        background-color: var(--clr-primary);
+        border-color: var(--clr-text);
     }
 }
 

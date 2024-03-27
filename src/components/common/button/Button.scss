@@ -4,21 +4,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
-    background-color: transparent;
-    border: 2px solid var(--clr-light);
-    color: var(--clr-light);
+    border: 2px solid var(--clr-text);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--clr-text);
     transition: all 0.25s;
 
-    padding: 8px 16px;
-    font-size: 32px;
+    font-size: 1.5rem;
+    padding: 0.25em 0.5em;
 
     &:hover,
     &:focus {
-        scale: 1.1;
-        border: 2px solid var(--clr-light-accent);
-        color: var(--clr-light-accent);
+        scale: 1.05;
+        border-color: var(--clr-text-accent);
+        color: var(--clr-text-accent);
     }
 
     &.big {
@@ -27,13 +28,13 @@
     }
 
     &.secondary {
-        background-color: var(--clr-light);
-        color: var(--clr-dark);
+        background-color: var(--clr-text);
+        color: var(--clr-primary);
 
         &:hover,
         &:focus  {
-            border: 2px solid var(--clr-light-accent);
-            background-color: var(--clr-light-accent);
+            border-color: var(--clr-text-accent);
+            background-color: var(--clr-text-accent);
         }
     }
 
@@ -54,8 +55,8 @@
         &:hover,
         &:focus {
             scale: 1;
-            border: 2px solid var(--clr-light);
-            color: var(--clr-light);
+            border-color: solid var(--clr-text);
+            color: var(--clr-text);
         }
 
         &.big {
@@ -64,13 +65,13 @@
         }
 
         &.secondary {
-            background-color: var(--clr-light);
-            color: var(--clr-dark);
+            background-color: var(--clr-text);
+            color: var(--clr-primary);
 
             &:hover,
             &:focus {
-                border: 2px solid var(--clr-light);
-                background-color: var(--clr-light);
+                border-color: var(--clr-text);
+                background-color: var(--clr-text);
             }
         }
     }

@@ -17,7 +17,6 @@
     width: calc((var(--box-width)*var(--total-boxes)) + (var(--box-spacing)*(var(--total-boxes) + 1)));
     height: var(--wrapper-height);
     position: relative;
-    // background-color: var(--clr-light-fade);
 
     .box-0 { --multiplier: 0; }
     .box-1 { --multiplier: 1; }
@@ -55,7 +54,7 @@
         transition: all 0.25s ease;
 
         &.active {
-            background-color: var(--clr-light-accent);
+            background-color: var(--clr-text-accent);
             border-radius: 50%;
         }
 

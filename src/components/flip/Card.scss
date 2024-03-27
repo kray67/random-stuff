@@ -56,18 +56,18 @@
         width: 100%;
         height: 100%;
         border-radius: 12px;
-        outline: 2px solid var(--clr-light);
+        outline: 2px solid var(--clr-text);
         -webkit-backface-visibility: hidden; /* Safari */
         backface-visibility: hidden;
     }
 
     .card-front {
-        color: var(--clr-light);
+        color: var(--clr-text);
         transition: all 0.3s ease;
     }
 
     .card-back {
-        color: var(--clr-light);
+        color: var(--clr-text);
         transform: rotateY(180deg);
     }
 }
@@ -95,7 +95,7 @@
 
             .card-inner {
                 .card-front {
-                    background-color: var(--clr-detail);
+                    background-color: var(--clr-tertiary);
                 }
             }
         }

@@ -2,9 +2,9 @@
   display: inline-block;
   width: 60px;
   height: 60px;
-  border: 4px solid var(--clr-light-fade);
+  border: 4px solid var(--clr-text-fade);
   border-radius: 50%;
-  border-top-color: var(--clr-light-accent);
+  border-top-color: var(--clr-text-accent);
   animation: spin 1s ease-in-out infinite;
   -webkit-animation: spin 1s ease-in-out infinite;
 }

@@ -9,14 +9,15 @@
     border-radius: 12px;
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid var(--clr-light);
-    color: var(--clr-light);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--clr-text);
 
     transition: all 0.25s;
 
     .title {
         width: 100%;
-        border-bottom: 2px solid var(--clr-light);
+        border-bottom: 2px solid var(--clr-text);
         text-align: center;
         font-size: 50px;
     }
