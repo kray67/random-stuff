@@ -23,18 +23,9 @@ const App = () => {
 		<div id="App">
 			{
 				location.pathname === '/' &&
-				<AnimatePresence mode="wait">
-					<motion.div
-					className="toggle-fuzzy"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
-					transition={{ duration: 0.5 }}>
-						<Toggle
-						text="FUZZY MODE"
-						clicked={() => setFuzzy(!fuzzy)} />
-					</motion.div>
-				</AnimatePresence>
+				<Toggle
+				text="FUZZY MODE"
+				clicked={() => setFuzzy(!fuzzy)} />
 			}
 			{
 				fuzzy &&
