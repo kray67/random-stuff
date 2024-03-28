@@ -1,17 +1,19 @@
 export const openAnimation = async (scope, animate) => {
-    // Animate expand width and bg color
-    await animate(scope, { width: '25vw', backgroundColor: 'var(--clr-tertiary)' }, { duration: 0.15 } )
+    // Animate bg color
+    await animate(scope, { backgroundColor: 'var(--clr-tertiary)' }, { duration: 0.15 } )
+    // Animate expand width
+    await animate(scope, { width: '25vw' }, { duration: 0.15 } )
     // Animate expand height
     animate(scope, { height: '70vh' }, { duration: 0.15 } )
-    // TOTAL OPEN ANIMATION TIME: 0.45s
 }
 
 export const closeAnimation = async (scope, animate, len) => {
     // Animate close height
     await animate(scope, { height: 50 }, { duration: 0.15, delay: (0.05 * len) + 0.1 } )
-    // Animate close width and bg color
-    animate(scope, { width: 50, backgroundColor: 'var(--clr-secondary)' }, { duration: 0.15 } )
-    // TOTAL CLOSE ANIMATION TIME: 0.45s
+    // Animate close width
+    await animate(scope, { width: 50 }, { duration: 0.15 } )
+    // Animate bg color
+    animate(scope, { backgroundColor: 'hsl(0, 0, 0%, 0)' }, { duration: 0.15 } )
 }
 
 export const wrapperVar = {
