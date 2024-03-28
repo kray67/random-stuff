@@ -15,7 +15,7 @@ const Burger = ({clicked, isActive}) => {
         animateIn: {
             rotate: '-135deg',
             y: 8,
-            backgroundColor: 'var(--clr-secondary)',
+            backgroundColor: 'var(--clr-text)',
             transition: {
                 backgroundColor: { delay: 0.25 },
                 duration: 0.5,
@@ -42,7 +42,7 @@ const Burger = ({clicked, isActive}) => {
         },
         animateIn: {
             x: -50,
-            backgroundColor: 'var(--clr-secondary)',
+            backgroundColor: 'var(--clr-text)',
             transition: {
                 backgroundColor: { delay: 0.25 },
                 duration: 0.5,
@@ -70,7 +70,7 @@ const Burger = ({clicked, isActive}) => {
         animateIn: {
             rotate: '135deg',
             y: -8,
-            backgroundColor: 'var(--clr-secondary)',
+            backgroundColor: 'var(--clr-text)',
             transition: {
                 backgroundColor: { delay: 0.25 },
                 duration: 0.5,
