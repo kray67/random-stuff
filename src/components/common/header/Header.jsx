@@ -19,6 +19,17 @@ const Header = () => {
         }
     }, [pathname])
     
+    /* Routes for Menu Links */
+    const routes = router.routes[0].children
+    const menuItems = []
+    routes.map((route) => {
+        if (route.path !== pathname) {
+            menuItems.push({
+                link: route.path,
+                text: route.linkText
+            })
+        }
+    }) 
 
     return (
         <div className="header-wrapper">
@@ -35,7 +46,7 @@ const Header = () => {
                 </motion.div>
             </AnimatePresence>
             <div className="spacer-div"></div>
-            <SlideMenu />
+            <SlideMenu menuItems={menuItems} />
         </div>
     )
 }
