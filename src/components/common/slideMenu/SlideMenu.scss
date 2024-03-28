@@ -29,6 +29,10 @@
         width: 1.5rem;
         border-radius: 6px;
         background-color: var(--clr-text);
+
+        &.middle {
+            width: 1.8rem;
+        }
     }
 }
 

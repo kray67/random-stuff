@@ -6,7 +6,6 @@
     justify-content: center;
     border-radius: 8px;
     cursor: pointer;
-    border: 2px solid var(--clr-text);
     border-width: 2px;
     border-style: solid;
     border-color: var(--clr-text);
@@ -28,13 +27,13 @@
     }
 
     &.secondary {
-        background-color: var(--clr-text);
-        color: var(--clr-primary);
+        border-color: var(--clr-tertiary);
+        color: var(--clr-tertiary);
 
         &:hover,
         &:focus  {
-            border-color: var(--clr-text-accent);
-            background-color: var(--clr-text-accent);
+            border-color: var(--clr-tertiary-accent);
+        color: var(--clr-tertiary-accent);
         }
     }
 
@@ -64,7 +63,7 @@
             font-size: 32px;
         }
 
-        &.secondary {
+        &.primary {
             background-color: var(--clr-text);
             color: var(--clr-primary);
 
