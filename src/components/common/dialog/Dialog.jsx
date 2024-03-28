@@ -48,8 +48,8 @@ const Dialog = ({params, confirm, cancel}) => {
                     <div className="title">{params.title}</div>
                     <div className="message">{params.message}</div>
                     <div className="buttons">
-                        <Button text={params.confirmBtnText} clicked={confirmHandler} />
-                        <Button text={params.cancelBtnText} clicked={cancelHandler} />
+                        <Button text={params.confirmBtnText} clicked={confirmHandler} isSecondary />
+                        <Button text={params.cancelBtnText} clicked={cancelHandler} isSecondary />
                     </div>
                 </div>
             </motion.div>

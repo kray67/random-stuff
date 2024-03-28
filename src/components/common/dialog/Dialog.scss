@@ -7,17 +7,21 @@
     padding: 40px 80px;
     font-size: 32px;
     border-radius: 12px;
-    cursor: pointer;
-    background-color: transparent;
+    background-color: var(--clr-secondary);
     border-width: 2px;
     border-style: solid;
-    border-color: var(--clr-text);
+    border-color: var(--clr-tertiary);
 
     transition: all 0.25s;
 
+    .title,
+    .message {
+        color: var(--clr-tertiary);
+    }
+
     .title {
         width: 100%;
-        border-bottom: 2px solid var(--clr-text);
+        border-bottom: 2px solid var(--clr-tertiary);
         text-align: center;
         font-size: 50px;
     }
