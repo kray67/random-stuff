@@ -71,11 +71,11 @@ input, button, textarea, select{
     --font-size: calc(15px + 0.390625vw);
     /* Colors */
     --clr-primary: hsl(216, 18%, 16%);
-    --clr-dark-transparent: hsla(216, 18%, 16%, 0.90);
+    --clr-primary-transparent: hsla(216, 18%, 16%, 0.90);
     --clr-secondary: hsl(217, 10%, 25%);
     --clr-secondary-transparent: hsl(217, 10%, 25%, 0.3);
     --clr-tertiary: hsl(183, 100%, 35%);
-    --clr-tertiary-accent: hsl(183, 100%, 40%);
+    --clr-tertiary-accent: hsl(183, 100%, 60%);
     --clr-text: hsl(0, 0%, 80%);
     --clr-text-accent: hsl(0, 0%, 95%);
     --clr-text-fade: hsl(0, 0%, 30%);
