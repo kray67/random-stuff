@@ -5,7 +5,7 @@ import { router } from '@/routes/router.jsx'
 import './Header.scss'
 import SlideMenu from '@/components/common/slideMenu/SlideMenu'
 
-const Header = () => {
+const Header = ({ fuzzyState, setFuzzyState }) => {
 
     const pathname = useLocation().pathname
     const [displayName, setDisplayName] = useState('')
@@ -46,7 +46,7 @@ const Header = () => {
                 </motion.div>
             </AnimatePresence>
             <div className="spacer-div"></div>
-            <SlideMenu menuItems={menuItems} />
+            <SlideMenu menuItems={menuItems} fuzzyState={fuzzyState} setFuzzyState={setFuzzyState} />
         </div>
     )
 }

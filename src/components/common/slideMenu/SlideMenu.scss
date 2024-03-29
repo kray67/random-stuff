@@ -39,8 +39,10 @@
 .routes-container {
     display: flex;
     flex-direction: column;
+    align-items: start;
     justify-content: center;
     gap: calc(var(--padding-size) / 5);
+    padding-left: var(--padding-size);
     overflow: hidden;
     
     .perspective-wrapper {
@@ -52,7 +54,6 @@
         position: relative;
         display: flex;
         width: max-content;
-        translate: var(--padding-size) 0;
         font-size: 1.5rem;
         color: var(--clr-secondary);
         transition: color 0.2s ease-in-out;
@@ -61,5 +62,11 @@
         &:focus {
             color: var(--clr-text);
         }
+    }
+
+    .toggle-animation-wrapper {
+        position: absolute;
+        bottom: var(--padding-size);
+        right: var(--padding-size);
     }
 }

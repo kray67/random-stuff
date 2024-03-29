@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import './App.scss'
 import Header from '@/components/common/header/Header.jsx'
 import FuzzyOverlay from '@/components/fuzzyOverlay/FuzzyOverlay.jsx'
-import Toggle from '@/components/common/toggle/Toggle'
 
 const App = () => {
 
@@ -19,19 +18,35 @@ const App = () => {
 		return <>{outlet}</>;
 	}
 
+	const headerAnimation = {
+		initial: {
+			translateY: -150,
+			opacity: 0,
+		},
+		slide: {
+			translateY: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.3
+			}
+		}
+	}
+
 	return (
 		<div id="App">
-			{
-				location.pathname === '/' &&
-				<Toggle
-				text="FUZZY MODE"
-				clicked={() => setFuzzy(!fuzzy)} />
-			}
 			{
 				fuzzy &&
 				<FuzzyOverlay />
 			}
-			<Header />
+			
+			<motion.div
+			className="header-animation-wrapper"
+			variants={headerAnimation}
+			initial="initial"
+			animate="slide">
+				<Header fuzzyState={fuzzy} setFuzzyState={() => setFuzzy(!fuzzy)} />
+			</motion.div>
+
 			<AnimatePresence initial={false} mode="wait">
 				<motion.div key={location.pathname} className="content"
 				initial={{ opacity: 0 }}

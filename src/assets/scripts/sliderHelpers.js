@@ -57,3 +57,23 @@ export const itemVar = (i, rev) => {
         }
     }
 }
+
+export const toggleVar = {
+    initial: {
+        opacity: 0
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            duration: 0.25,
+            delay: 0.75,
+        }
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.25,
+            delay: 0,
+        }
+    }
+}

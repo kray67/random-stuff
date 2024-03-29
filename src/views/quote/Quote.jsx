@@ -77,7 +77,6 @@ const Quote = () => {
                             transition={{ duration: 0.1 }}>
                                 <Spinner />
                             </motion.div>
-                            // <Spinner2 key="spinner2" />
                     }
 
                     {

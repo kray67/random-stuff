@@ -1,47 +1,42 @@
 .toggle-wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    min-width: 100px;
+    gap: .5rem;
 
     .label {
-        font-size: 16px;
-        color: var(--clr-text);
+        font-size: 1rem;
+        color: var(--clr-secondary);
     }
 
     .toggle-outer {
-        --outer-height: 32px;
-        --iner-width: calc(var(--outer-height) - 8px);
-        --spacing: 2px;
+        --inner-width: 20px;
+        --outer-width: calc(var(--inner-width) * 2.5);
+        --spacing: calc(var(--inner-width) / 6);
 
-        width: calc(var(--outer-height)*1.8);
-        height: var(--outer-height);
+        display: flex;
+        align-items: center;
+        padding: var(--spacing);
+
+        width: var(--outer-width);
         position: relative;
         border-radius: 1000px;
         cursor: pointer;
-        background-color: transparent;
-        border: 3px solid var(--clr-text);
+        background-color: var(--clr-secondary);
         transition: all 0.6s ease-in-out;
 
         .toggle-inner {
-            position: absolute;
-            top: var(--spacing);
-            left: calc(0% + var(--spacing));
-            width: var(--iner-width);
-            height: var(--iner-width);
+            width: var(--inner-width);
+            height: var(--inner-width);
             border-radius: 100%;
-            background-color: var(--clr-text-accent);
-            border: 3px solid var(--clr-text-accent);
+            background-color: var(--clr-text);
             transition: all 0.3s ease-in-out;
         }
 
         &.toggled {
-            background-color: var(--clr-disabled);
-
             .toggle-inner {
-                left: calc(100% - var(--iner-width) - var(--spacing));
+                translate: calc(var(--inner-width) + calc(var(--spacing))) 0;
+                background-color: var(--clr-tertiary);
             }
         }
     }
