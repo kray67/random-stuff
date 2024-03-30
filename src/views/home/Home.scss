@@ -1,31 +1,10 @@
 #Home {
-    gap: 30px;
 
-    .home-link {
-        position: relative;
+    #Blob {
+        width: clamp(300px, 30vw, 600px);
 
-        .coming-soon {
-            position: absolute;
-            top: -15px;
-            right: -10px;
-            padding: 2px 4px;
-            border-radius: 4px;
-            z-index: 1;
-            background-color: var(--clr-positive);
-            border: 2px solid var(--clr-text);
-            color: var(--clr-text);
-            font-size: 14px;
-        }
-    }
-}
-
-@media (max-width: 600px) {
-    #Home {
-        .home-link {
-            .coming-soon {
-                right: -15px;
-                font-size: 12px;
-            }
+        path {
+            transition: all 0.5s ease;
         }
     }
 }
